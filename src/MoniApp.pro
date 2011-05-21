@@ -12,13 +12,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
 		MainWindow.cpp \
-	SideBar.cpp
+	SideBar.cpp \
+    NewTransactionDialog.cpp
 
 HEADERS  += MainWindow.h \
-	SideBar.h
+	SideBar.h \
+    NewTransactionDialog.h
 
 FORMS    += MainWindow.ui \
-	SideBar.ui
+	SideBar.ui \
+    NewTransactionDialog.ui
 
 RESOURCES += \
     MoniAppIcons.qrc
