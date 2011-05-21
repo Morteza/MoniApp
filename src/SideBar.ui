@@ -141,9 +141,9 @@
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>234</red>
-              <green>234</green>
-              <blue>234</blue>
+              <red>236</red>
+              <green>236</green>
+              <blue>236</blue>
              </color>
             </brush>
            </colorrole>
@@ -152,9 +152,9 @@
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>234</red>
-              <green>234</green>
-              <blue>234</blue>
+              <red>236</red>
+              <green>236</green>
+              <blue>236</blue>
              </color>
             </brush>
            </colorrole>
@@ -223,9 +223,9 @@
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>234</red>
-              <green>234</green>
-              <blue>234</blue>
+              <red>236</red>
+              <green>236</green>
+              <blue>236</blue>
              </color>
             </brush>
            </colorrole>
@@ -234,9 +234,9 @@
            <colorrole role="Base">
             <brush brushstyle="SolidPattern">
              <color alpha="255">
-              <red>234</red>
-              <green>234</green>
-              <blue>234</blue>
+              <red>236</red>
+              <green>236</green>
+              <blue>236</blue>
              </color>
             </brush>
            </colorrole>
@@ -256,6 +256,9 @@
         </property>
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>

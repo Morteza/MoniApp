@@ -18,6 +18,20 @@ MainWindow::MainWindow(QWidget *parent) :
 	configBtn->setIcon(QIcon(QPixmap(":/icons/config.png").scaled(26,26)));
 	ui->toolBar->addWidget(configBtn);
 
+
+	// --- Test to insert rows
+
+	int row = ui->tableWidget->rowCount(); // current row count
+
+	for (int j=row;j<row+10;j++){
+		ui->tableWidget->setRowCount(j+1); // add one row
+		for (int col = 0; col < ui->tableWidget->columnCount(); ++col)
+		{
+			QTableWidgetItem* newItem = new QTableWidgetItem("blaa");
+			ui->tableWidget->setItem(j, col, newItem);
+		}
+	}
+	// --- End Test
 }
 
 MainWindow::~MainWindow()
