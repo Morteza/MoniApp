@@ -13,11 +13,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
 		MainWindow.cpp \
 	SideBar.cpp \
-    NewTransactionDialog.cpp
+    NewTransactionDialog.cpp \
+    Account.cpp \
+    Transaction.cpp \
+    Report.cpp
 
 HEADERS  += MainWindow.h \
 	SideBar.h \
-    NewTransactionDialog.h
+    NewTransactionDialog.h \
+    Account.h \
+    Transaction.h \
+    Report.h
 
 FORMS    += MainWindow.ui \
 	SideBar.ui \
