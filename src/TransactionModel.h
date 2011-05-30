@@ -2,33 +2,28 @@
 #define TRANSACTIONMODEL_H
 
 #include <QDate>
-#include "AccountModel.h"
 
 class TransactionModel
 {
 private:
 	bool checked;
-	QDate *date;
-	QString *note;
-	int amount;
+	QDate date;
+	QString note;
+	float amount;
 	int id;
-	AccountModel *account;
 
 public:
-	TransactionModel(AccountModel * account, int id, bool checked, QDate date, QString note, int amount);
+	TransactionModel(int id, bool checked, QDate &date, QString &note, float amount);
 	~TransactionModel();
 	bool isChecked();
 	void setChecked(bool checked);
-	QDate getDate();
-	void setDate(QDate date);
-	QString getNote();
-	void setNote(QString note);
-	int getAmount();
-	void setAmount(int amount);
+	QDate& getDate();
+	void setDate(QDate &date);
+	QString& getNote();
+	void setNote(QString &note);
+	float getAmount();
+	void setAmount(float amount);
 	int getId();
-	void setId(int id);
-	AccountModel getAccount();
-	void setAccount(AccountModel * account);
 };
 
 #endif // TRANSACTIONMODEL_H

@@ -17,7 +17,7 @@ SOURCES += main.cpp\
     ReportModel.cpp \
     AccountModel.cpp \
     TransactionModel.cpp \
-    AccountManagerModel.cpp
+    AccountManager.cpp
 
 HEADERS  += MainWindow.h \
 	SideBar.h \
@@ -25,7 +25,7 @@ HEADERS  += MainWindow.h \
     AccountModel.h \
     ReportModel.h \
     TransactionModel.h \
-    AccountManagerModel.h
+    AccountManager.h
 
 FORMS    += MainWindow.ui \
 	SideBar.ui \

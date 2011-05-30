@@ -4,19 +4,22 @@
 #include <QDialog>
 
 namespace Ui {
-    class NewTransactionDialog;
+	class NewTransactionDialog;
 }
 
 class NewTransactionDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit NewTransactionDialog(QWidget *parent = 0);
-    ~NewTransactionDialog();
+	explicit NewTransactionDialog(QWidget *parent = 0);
+	~NewTransactionDialog();
+
+private slots:
+	void on_toolButton_clicked();
 
 private:
-    Ui::NewTransactionDialog *ui;
+	Ui::NewTransactionDialog *ui;
 };
 
 #endif // NEWTRANSACTIONDIALOG_H

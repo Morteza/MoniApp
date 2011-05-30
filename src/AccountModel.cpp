@@ -1,34 +1,33 @@
 #include "AccountModel.h"
 
-AccountModel::AccountModel(int id, QString title)
+AccountModel::AccountModel(QString &title)
 {
-	this->setId(id);
-	this->setTitle(title);
-}
-
-void AccountModel::setId(int id)
-{
-	this->id = id;
-}
-
-void AccountModel::setTitle(QString title)
-{
-	if (this->title)
-		delete this->title;
-	this->title = new QString(title);
-}
-
-int AccountModel::getId()
-{
-	return this->id;
-}
-
-QString AccountModel::getTitle()
-{
-	return *this->title;
+	//TODO: generate UUID
+	setTitle(title);
+	this->transactions.clear();
 }
 
 AccountModel::~AccountModel()
 {
-	delete this->title;
+
+}
+
+void AccountModel::setTitle(QString &title)
+{
+	this->title = QString(title);
+}
+
+QString& AccountModel::getTitle()
+{
+	return this->title;
+}
+
+int AccountModel::getUUID()
+{
+	return this->uuid;
+}
+
+void AccountModel::addTransaction(TransactionModel &transaction)
+{
+	this->transactions.push_back(transaction);
 }
