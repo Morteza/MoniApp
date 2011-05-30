@@ -2,19 +2,24 @@
 #define ACCOUNTMODEL_H
 
 #include <QString>
+#include <vector>
+#include "TransactionModel.h"
 
 class AccountModel
 {
 private:
-	int id;
-	QString * title;
+	int uuid;
+	QString title;
+	std::vector<TransactionModel> transactions;
+
 public:
-	AccountModel(int id, QString title);
+	AccountModel(QString &title);
 	~AccountModel();
-	void setTitle(QString title);
-	QString getTitle();
-	void setId(int id);
-	int getId();
+	void setTitle(QString &title);
+	QString& getTitle();
+	int getUUID();
+
+	void addTransaction(TransactionModel &transaction);
 };
 
 #endif // ACCOUNTMODEL_H

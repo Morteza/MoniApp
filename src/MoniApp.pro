@@ -16,14 +16,16 @@ SOURCES += main.cpp\
     NewTransactionDialog.cpp \
     ReportModel.cpp \
     AccountModel.cpp \
-    TransactionModel.cpp
+    TransactionModel.cpp \
+    AccountManagerModel.cpp
 
 HEADERS  += MainWindow.h \
 	SideBar.h \
     NewTransactionDialog.h \
     AccountModel.h \
     ReportModel.h \
-    TransactionModel.h
+    TransactionModel.h \
+    AccountManagerModel.h
 
 FORMS    += MainWindow.ui \
 	SideBar.ui \
