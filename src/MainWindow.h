@@ -20,6 +20,10 @@ private:
 	Ui::MainWindow *ui;
 	QToolButton *configBtn;
 	QToolButton *addBtn;
+
+private slots:
+	void showNewTransactionDialog();
+
 };
 
 #endif // MAINWINDOW_H
