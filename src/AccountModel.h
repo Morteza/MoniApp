@@ -18,10 +18,12 @@ private:
 	QList<TransactionModel> m_transactions;
 
 public:
+	AccountModel();
 	AccountModel(int id);
 	void setTitle(const QString &title);
-	QString title();
-	int id();
+	QString title() const;
+	int id() const;
+	QList<TransactionModel> transactions() const;
 
 	void addTransaction(TransactionModel transaction);
 

@@ -1,5 +1,11 @@
 #include "AccountModel.h"
 
+AccountModel::AccountModel()
+{
+	//! TODO: generate random UUID for m_id
+	this->m_id = 0;
+}
+
 AccountModel::AccountModel(int id)
 {
 	this->m_id = id;
@@ -10,12 +16,12 @@ void AccountModel::setTitle(const QString &title)
 	this->m_title = QString(title);
 }
 
-QString AccountModel::title()
+QString AccountModel::title() const
 {
 	return this->m_title;
 }
 
-int AccountModel::id()
+int AccountModel::id() const
 {
 	return this->m_id;
 }
@@ -25,12 +31,16 @@ void AccountModel::addTransaction(TransactionModel transaction)
 	this->m_transactions << transaction;
 }
 
+QList<TransactionModel> AccountModel::transactions() const
+{
+	return this->m_transactions;
+}
 
 QDataStream &operator<<(QDataStream &out, const AccountModel &account)
 {
 	out << account.id()
-		<< account.m_title
-		<< account.m_transactions;
+		<< account.title()
+		<< account.transactions();
 
 	return out;
 }
