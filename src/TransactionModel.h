@@ -1,33 +1,38 @@
 #ifndef TRANSACTIONMODEL_H
 #define TRANSACTIONMODEL_H
 
+#include "MoniApp.h"
+
+#include <QDataStream>
 #include <QDate>
 
 class TransactionModel
 {
+
 private:
+	int id;
 	bool checked;
 	QDate date;
 	QString note;
 	float amount;
-	int id;
 
 public:
-	TransactionModel(int id, bool checked, QDate &date, QString &note, float amount);
-	~TransactionModel();
-	bool isChecked();
+	TransactionModel();
+	void setId(int id);
 	void setChecked(bool checked);
-	QDate& getDate();
 	void setDate(QDate &date);
-	QString& getNote();
 	void setNote(QString &note);
-	float getAmount();
 	void setAmount(float amount);
-	int getId();
 
-	QDataStream &operator<<(QDataStream &, const TransactionModel &transaction);
-	QDataStream &operator>>(QDataStream &, TransactionModel &transaction);
+	int getId() const;
+	bool isChecked() const;
+	QDate getDate() const;
+	QString getNote() const;
+	float getAmount() const;
 
 };
+
+QDataStream &operator<<(QDataStream &out, const TransactionModel &transaction);
+QDataStream &operator>>(QDataStream &in, TransactionModel &transaction);
 
 #endif // TRANSACTIONMODEL_H

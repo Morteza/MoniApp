@@ -25,7 +25,8 @@ HEADERS  += MainWindow.h \
     AccountModel.h \
     ReportModel.h \
     TransactionModel.h \
-    AccountManager.h
+    AccountManager.h \
+    MoniApp.h
 
 FORMS    += MainWindow.ui \
 	SideBar.ui \

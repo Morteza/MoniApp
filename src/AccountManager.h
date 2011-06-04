@@ -1,29 +1,32 @@
 #ifndef ACCOUNTMANAGER_H
 #define ACCOUNTMANAGER_H
 
-#include <vector>
-
-#include <QFile>
-
+#include "MoniApp.h"
 #include "AccountModel.h"
+#include "TransactionModel.h"
+
+#include <QObject>
+#include <QDataStream>
+#include <QString>
+#include <QFile>
+#include <QList>
+
 
 class AccountManager
 {
 
 private:
-	std::vector<AccountModel> accounts;
+	QList<AccountModel> accounts;
 
 public:
 	AccountManager();
 	~AccountManager();
 	int getNumberOfAccounts();
-	void addAccount(AccountModel &account);
+	void addAccount(AccountModel *account);
 	void removeAccount(int uuid);
-	void removeAccount(AccountModel &account);
 
-	//TODO: add to slots
-	bool saveToFile(QFile &file);
-	bool loadFromFile(QFile &file);
+	bool saveToFile(const QString &fileName);
+	bool loadFromFile(const QString &fileName);
 };
 
 #endif // ACCOUNTMANAGER_H

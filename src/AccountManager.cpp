@@ -1,34 +1,67 @@
 #include "AccountManager.h"
+#include "MoniApp.h"
+
+#include <QDataStream>
+#include <QFile>
 
 AccountManager::AccountManager()
 {
 }
 
-AccountManager::saveToFile(QFile &file)
+bool AccountManager::saveToFile(const QString &fileName)
 {
-	file.open(QIODevice::WriteOnly);
+	QFile file(fileName);
+	if (!file.open(QIODevice::WriteOnly))
+	{
+		return false;
+	}
 	QDataStream out(&file);
 
-	out << (qint32) 1 ; // write version
+	out.setVersion(QDataStream::Qt_4_7);
 
-	//TODO: write accounts
+	//! Write a header with a "magic number" and a version
+	out << quint32(MONI_MAGIC_NUMBER);
+	out << quint32(MONI_VERSION);
 
 	for (int i = 0 ; i < accounts.size() ; i++)
 	{
 		out << accounts.at(i);
 	}
+
 	file.close();
+	return true;
 }
 
-AccountManager::loadFromFile(QFile &file)
+bool AccountManager::loadFromFile(const QString &fileName)
 {
-	file.open(QIODevice::ReadOnly);
+
+	QFile file(fileName);
+	if (!file.open(QIODevice::ReadOnly)) {
+		return false;
+	}
 	QDataStream in(&file);
+	in.setVersion(QDataStream::Qt_4_7);
 
+	quint32 magic;
+	in >> magic;
+	if (magic != MONI_MAGIC_NUMBER) {
+		return false;
+	}
+
+	//! TODO: Check version
 	qint32 version;
-	in >> version; // read version
+	in >> version;
 
-	//TODO: read accounts
+	accounts.clear();
+
+
+	while (!in.atEnd()) {
+		AccountModel account;
+		in << account;
+		accounts.append(account);
+
+	}
 
 	file.close();
+	return true;
 }

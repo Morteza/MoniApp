@@ -2,17 +2,17 @@
 #include <QtCore/QSettings>
 #include "MainWindow.h"
 
-
-QSettings& loadSettings(QApplication *app)
+/*
+QSettings loadSettings(const QApplication &app)
 {
-
+	return NULL;
 }
-
+*/
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 
-	QSettings settings = loadSettings(&a);
+	//QSettings settings = loadSettings(a);
 
 	MainWindow w;
 	w.show();

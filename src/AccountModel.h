@@ -1,28 +1,32 @@
 #ifndef ACCOUNTMODEL_H
 #define ACCOUNTMODEL_H
 
-#include <QString>
-#include <vector>
+#include "MoniApp.h"
 #include "TransactionModel.h"
+
+#include <QDataStream>
+#include <QString>
+#include <QList>
+
 
 class AccountModel
 {
+
 private:
 	int uuid;
 	QString title;
-	std::vector<TransactionModel> transactions;
+	QList<TransactionModel*> transactions;
 
 public:
-	AccountModel(QString &title);
-	~AccountModel();
-	void setTitle(QString &title);
-	QString& getTitle();
+	AccountModel();
+	void setTitle(const QString &title);
+	QString getTitle();
 	int getUUID();
 
-	void addTransaction(TransactionModel &transaction);
+	void addTransaction(TransactionModel *transaction);
 
-	QDataStream &operator<<(QDataStream &, const AccountMode &account);
-	QDataStream &operator>>(QDataStream &, AccountModel &account);
 };
+QDataStream &operator<<(QDataStream &out, const AccountModel &account);
+QDataStream &operator>>(QDataStream &in, AccountModel &account);
 
 #endif // ACCOUNTMODEL_H
