@@ -23,9 +23,9 @@ bool AccountManager::saveToFile(const QString &fileName)
 	out << quint32(MONI_MAGIC_NUMBER);
 	out << quint32(MONI_VERSION);
 
-	for (int i = 0 ; i < accounts.size() ; i++)
+	for (int i = 0 ; i < this->m_accounts.size() ; i++)
 	{
-		out << accounts.at(i);
+		out << this->m_accounts.at(i);
 	}
 
 	file.close();
@@ -52,13 +52,13 @@ bool AccountManager::loadFromFile(const QString &fileName)
 	qint32 version;
 	in >> version;
 
-	accounts.clear();
+	this->m_accounts.clear();
 
 
 	while (!in.atEnd()) {
 		AccountModel account;
 		in << account;
-		accounts.append(account);
+		this->m_accounts.append(account);
 
 	}
 

@@ -5,61 +5,61 @@ TransactionModel::TransactionModel(){
 
 bool TransactionModel::isChecked() const
 {
-	return this->checked;
+	return this->m_checked;
 }
 
 void TransactionModel::setChecked(bool checked)
 {
-	this->checked = checked;
+	this->m_checked = checked;
 }
 
-QDate TransactionModel::getDate() const
+QDate TransactionModel::date() const
 {
-	return this->date;
+	return this->m_date;
 }
 
-void TransactionModel::setDate(QDate &date)
+void TransactionModel::setDate(const QDate &date)
 {
-	this->date = QDate(date);
+	this->m_date = QDate(date);
 }
 
-QString TransactionModel::getNote() const
+QString TransactionModel::note() const
 {
-	return this->note;
+	return this->m_note;
 }
 
-void TransactionModel::setNote(QString &note)
+void TransactionModel::setNote(const QString &note)
 {
-	this->note = QString(note);
+	this->m_note = QString(note);
 }
 
-float TransactionModel::getAmount() const
+float TransactionModel::amount() const
 {
-	return this->amount;
+	return this->m_amount;
 }
 
 void TransactionModel::setAmount(float amount)
 {
-	this->amount = amount;
+	this->m_amount = amount;
 }
 
-int TransactionModel::getId() const
+int TransactionModel::id() const
 {
-	return this->id;
+	return this->m_id;
 }
 
 void TransactionModel::setId(int id)
 {
-	this->id = id;
+	this->m_id = id;
 }
 
 QDataStream &operator<<(QDataStream &out, const TransactionModel &transaction)
 {
-	out << transaction.getId()
+	out << transaction.id()
 		<< transaction.isChecked()
-		<< transaction.getDate()
-		<< transaction.getNote()
-		<< transaction.getAmount();
+		<< transaction.date()
+		<< transaction.note()
+		<< transaction.amount();
 
 	return out;
 }

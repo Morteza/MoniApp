@@ -13,17 +13,17 @@ class AccountModel
 {
 
 private:
-	int uuid;
-	QString title;
-	QList<TransactionModel*> transactions;
+	int m_id;
+	QString m_title;
+	QList<TransactionModel> m_transactions;
 
 public:
 	AccountModel();
 	void setTitle(const QString &title);
-	QString getTitle();
-	int getUUID();
+	QString title();
+	int id();
 
-	void addTransaction(TransactionModel *transaction);
+	void addTransaction(TransactionModel transaction);
 
 };
 QDataStream &operator<<(QDataStream &out, const AccountModel &account);

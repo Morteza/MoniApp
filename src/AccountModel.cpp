@@ -7,31 +7,33 @@ AccountModel::AccountModel()
 
 void AccountModel::setTitle(const QString &title)
 {
-	this->title = QString(title);
+	this->m_title = QString(title);
 }
 
-QString AccountModel::getTitle()
+QString AccountModel::title()
 {
-	return this->title;
+	return this->m_title;
 }
 
-int AccountModel::getUUID()
+int AccountModel::id()
 {
-	return this->uuid;
+	return this->m_id;
 }
 
-void AccountModel::addTransaction(TransactionModel *transaction)
+void AccountModel::addTransaction(TransactionModel transaction)
 {
-	this->transactions << transaction;
+	this->m_transactions << transaction;
 }
 
 
 QDataStream &operator<<(QDataStream &out, const AccountModel &account)
 {
+	//TODO: write
 	return out;
 }
 
 QDataStream &operator>>(QDataStream &in, AccountModel &account)
 {
+	//TODO: read
 	return in;
 }

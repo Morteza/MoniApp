@@ -16,13 +16,13 @@ class AccountManager
 {
 
 private:
-	QList<AccountModel> accounts;
+	QList<AccountModel> m_accounts;
 
 public:
 	AccountManager();
 	~AccountManager();
-	int getNumberOfAccounts();
-	void addAccount(AccountModel *account);
+	int numberOfAccounts();
+	void addAccount(AccountModel account);
 	void removeAccount(int uuid);
 
 	bool saveToFile(const QString &fileName);
