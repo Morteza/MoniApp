@@ -1,8 +1,8 @@
 #include "AccountModel.h"
 
-AccountModel::AccountModel()
+AccountModel::AccountModel(int id)
 {
-	//TODO: generate UUID
+	this->m_id = id;
 }
 
 void AccountModel::setTitle(const QString &title)
@@ -28,12 +28,34 @@ void AccountModel::addTransaction(TransactionModel transaction)
 
 QDataStream &operator<<(QDataStream &out, const AccountModel &account)
 {
-	//TODO: write
+	out << account.id()
+		<< account.m_title
+		<< account.m_transactions;
+
 	return out;
 }
 
 QDataStream &operator>>(QDataStream &in, AccountModel &account)
 {
-	//TODO: read
+	int id;
+	QString title;
+	QList<TransactionModel> transactions;
+
+	//! read transaction info from input stream
+	in >> id
+	   >> title
+	   >> transactions;
+
+	//! create new account object
+	account = AccountModel(id);
+	account.setTitle(title);
+
+	for (int i = 0 ;i <transactions.size();i++)
+	{
+		account.addTransaction(transactions.at(i));
+	}
+
+	transactions.clear();
+
 	return in;
 }

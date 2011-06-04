@@ -18,7 +18,7 @@ private:
 	QList<TransactionModel> m_transactions;
 
 public:
-	AccountModel();
+	AccountModel(int id);
 	void setTitle(const QString &title);
 	QString title();
 	int id();

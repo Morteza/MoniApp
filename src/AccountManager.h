@@ -23,7 +23,7 @@ public:
 	~AccountManager();
 	int numberOfAccounts();
 	void addAccount(AccountModel account);
-	void removeAccount(int uuid);
+	void removeAccount(int id);
 
 	bool saveToFile(const QString &fileName);
 	bool loadFromFile(const QString &fileName);
