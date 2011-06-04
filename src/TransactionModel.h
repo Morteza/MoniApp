@@ -24,6 +24,10 @@ public:
 	float getAmount();
 	void setAmount(float amount);
 	int getId();
+
+	QDataStream &operator<<(QDataStream &, const TransactionModel &transaction);
+	QDataStream &operator>>(QDataStream &, TransactionModel &transaction);
+
 };
 
 #endif // TRANSACTIONMODEL_H

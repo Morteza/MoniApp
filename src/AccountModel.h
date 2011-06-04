@@ -20,6 +20,9 @@ public:
 	int getUUID();
 
 	void addTransaction(TransactionModel &transaction);
+
+	QDataStream &operator<<(QDataStream &, const AccountMode &account);
+	QDataStream &operator>>(QDataStream &, AccountModel &account);
 };
 
 #endif // ACCOUNTMODEL_H

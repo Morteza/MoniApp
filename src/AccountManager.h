@@ -2,6 +2,9 @@
 #define ACCOUNTMANAGER_H
 
 #include <vector>
+
+#include <QFile>
+
 #include "AccountModel.h"
 
 class AccountManager
@@ -15,10 +18,12 @@ public:
 	~AccountManager();
 	int getNumberOfAccounts();
 	void addAccount(AccountModel &account);
+	void removeAccount(int uuid);
+	void removeAccount(AccountModel &account);
 
 	//TODO: add to slots
-	bool saveToFile();
-	bool loadFromFile();
+	bool saveToFile(QFile &file);
+	bool loadFromFile(QFile &file);
 };
 
 #endif // ACCOUNTMANAGER_H
