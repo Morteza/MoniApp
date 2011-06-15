@@ -1,6 +1,6 @@
 #include <QtGui/QApplication>
 #include <QtCore/QSettings>
-#include "MainWindow.h"
+#include "ui/MainWindow.h"
 
 /*
 QSettings loadSettings(const QApplication &app)

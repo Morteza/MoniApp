@@ -11,26 +11,30 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-		MainWindow.cpp \
-	SideBar.cpp \
-    NewTransactionDialog.cpp \
-    ReportModel.cpp \
-    AccountModel.cpp \
-    TransactionModel.cpp \
-    AccountManager.cpp
+	ui/SideBarLabel.cpp \
+	ui/SideBar.cpp \
+	ui/MainWindow.cpp \
+	model/TransactionModel.cpp \
+	model/ReportModel.cpp \
+	model/AccountModel.cpp \
+	model/AccountManager.cpp \
+    ui/StartPage.cpp
 
-HEADERS  += MainWindow.h \
-	SideBar.h \
-    NewTransactionDialog.h \
-    AccountModel.h \
-    ReportModel.h \
-    TransactionModel.h \
-    AccountManager.h \
-    MoniApp.h
+HEADERS  += MoniApp.h \
+	ui/SideBarLabel.h \
+	ui/SideBar.h \
+	ui/PageInterface.h \
+	ui/MainWindow.h \
+	model/TransactionModel.h \
+	model/ReportModel.h \
+	model/AccountModel.h \
+	model/AccountManager.h \
+    ui/StartPage.h
 
-FORMS    += MainWindow.ui \
-	SideBar.ui \
-    NewTransactionDialog.ui
+FORMS    += \
+	ui/SideBarLabel.ui \
+	ui/MainWindow.ui \
+    ui/StartPage.ui
 
-RESOURCES += \
-    MoniAppIcons.qrc
+RESOURCES += MoniApp.qrc \
+    KD2.qrc
