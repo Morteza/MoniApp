@@ -1,16 +1,20 @@
+XUPProjectSettings {
+	SHOW_QT_VERSION_WARNING	= 0
+}
+
 #-------------------------------------------------
 #
 # Project created by QtCreator 2011-05-21T01:28:02
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT	= core gui
 
-TARGET = MoniApp
-TEMPLATE = app
+TARGET	= MoniApp
+TEMPLATE	= app
 
 
-SOURCES += main.cpp\
+SOURCES	+= main.cpp \
 	ui/SideBarLabel.cpp \
 	ui/SideBar.cpp \
 	ui/MainWindow.cpp \
@@ -18,9 +22,9 @@ SOURCES += main.cpp\
 	model/ReportModel.cpp \
 	model/AccountModel.cpp \
 	model/AccountManager.cpp \
-    ui/StartPage.cpp
+	ui/StartPage.cpp
 
-HEADERS  += MoniApp.h \
+HEADERS	+= MoniApp.h \
 	ui/SideBarLabel.h \
 	ui/SideBar.h \
 	ui/PageInterface.h \
@@ -29,12 +33,13 @@ HEADERS  += MoniApp.h \
 	model/ReportModel.h \
 	model/AccountModel.h \
 	model/AccountManager.h \
-    ui/StartPage.h
+	ui/StartPage.h
 
-FORMS    += \
-	ui/SideBarLabel.ui \
+FORMS	+= ui/SideBarLabel.ui \
 	ui/MainWindow.ui \
-    ui/StartPage.ui
+	ui/StartPage.ui
 
-RESOURCES += MoniApp.qrc \
-    KD2.qrc
+RESOURCES	+= MoniApp.qrc \
+	KD2.qrc
+
+CONFIG	+= release x86_64 app_bundle
